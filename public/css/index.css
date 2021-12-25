@@ -191,6 +191,7 @@ body {
 }
 
 .main-button a:hover {
+  cursor: pointer;
   background-color: #f9735b;
 }
 

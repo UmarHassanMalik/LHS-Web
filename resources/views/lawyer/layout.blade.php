@@ -1,19 +1,4 @@
-<!--
 
-=========================================================
-* Now UI Dashboard - v1.5.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
-
-* Designed by www.invisionapp.com Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,8 +21,7 @@
     <!-- CSS Files -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="/assets/demo/demo.css" rel="stylesheet" />
+
 </head>
 
 <body class="">
@@ -47,7 +31,7 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
       -->
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                <a href="" class="simple-text logo-normal">
                     Lawyer Hiring System
                 </a>
             </div>
@@ -74,13 +58,13 @@
                     <li>
                     <li>
                         <a href="{{route('ongoingLawyerCases')}}">
-                            <i class="fa fa-graduation-cap"></i>
+                            <i class="fa fa-paper-plane"></i>
                             <p>Ongoing Cases</p>
                         </a>
                     </li>
                     <li>
                         <a href="{{route('hiredCases')}}">
-                            <i class="fa fa-black-tie"></i>
+                            <i class="fa fa-envelope"></i>
                             <p>Closed Cases</p>
                         </a>
                     </li>
@@ -123,22 +107,27 @@
 
                         <ul class="navbar-nav">
                        
-                            <li class="nav-item dropdown">
+                        
+                           
+                              <li class="nav-item dropdown" style="cursor:pointer">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-user"></i>
-                                    <p>
-                                        <span class="d-lg-none d-md-block">Some Actions</span>
-                                    </p>
+                                  aria-haspopup="true" aria-expanded="false">
+                                  <i class="now-ui-icons bi bi-person " style="font-size: 20px"></i>
+                                  <p style="font-size: 12px">
+                                    <span class="d-lg-none d-md-block"></span>
+                                    {{ Auth::user()->displayName}}
+                                  </p>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                  </form>
+                                  <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                  </form>
+                
+                
                                 </div>
-                            </li>
+                              </li>
                   
                         </ul>
                     </div>
@@ -151,20 +140,20 @@
             <footer class="footer">
                 <div class=" container-fluid ">
                     <nav>
-                        <ul>
+                        <ul style="cursor: pointer">
                             <li>
-                                <a href="https://www.creative-tim.com">
-                                    Creative Tim
+                                <a href="">
+                                    Zohaib Haider Umar
                                 </a>
                             </li>
                             <li>
-                                <a href="http://presentation.creative-tim.com">
+                                <a href="http://lhs.com">
                                     About Us
                                 </a>
                             </li>
                             <li>
-                                <a href="http://blog.creative-tim.com">
-                                    Blog
+                                <a href="https://github.com/UmarHassanMalik">
+                                    Git
                                 </a>
                             </li>
                         </ul>
@@ -173,8 +162,8 @@
                         &copy;
                         <script>
                             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-                        </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a
-                            href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+                        </script>, Designed by <a href="" target="_blank">Zohaib Haider & Umar</a>.  <a
+                            href="" target="_blank"></a>.
                     </div>
                 </div>
             </footer>
@@ -192,17 +181,8 @@
     <script src="/assets/js/plugins/chartjs.min.js"></script>
     <!--  Notifications Plugin    -->
     <script src="/assets/js/plugins/bootstrap-notify.js"></script>
-    <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+    <!-- Control Center  parallax effects, scripts for the example pages etc -->
     <script src="/assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
-    <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-    <script src="/assets/demo/demo.js"></script>
-    <script>
-        $(document).ready(function () {
-            // Javascript method's body can be found in assets/js/demos.js
-            demo.initDashboardPageCharts();
-
-        });
-    </script>
 </body>
 
 </html>
