@@ -24,8 +24,8 @@
 
 <body>
 
-    <nav class="mb-4 navbar navbar-expand-sm navbar-dark cyan sticky-top" type="navmain">
-        <a class=" text-success ms-2 font-bold" href="#">Welcome!!</a>
+    <div class="col-md-12 py-0 navbar navbar-expand-sm navbar-dark cyan sticky-top" type="navmain">
+        <a class=" text-success ms-2 font-bold" href="#">Welcome</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
             aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,13 +35,13 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>
-                        {{Auth::user()->displayName}}</a>
+                        aria-haspopup="true" aria-expanded="false">
+                        <img width="30" height="30" class="rounded-circle" src="../images/profile.jpg" alt="..."> {{Auth::user()->displayName}}</a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-cyan"
                         aria-labelledby="navbarDropdownMenuLink-4">
-                        <a class="dropdown-item " href="{{url('/Profile/dashboard')}}">My Profile</a>
+                        <a class="dropdown-item " href="{{url('/Profile/dashboard')}}"><i class="fa fa-user"></i> &nbsp; &nbsp;  My Profile</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();"> {{ __('Logout') }} </a>
+                        document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> &nbsp; &nbsp; {{ __('Logout') }} </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
@@ -49,21 +49,9 @@
                 </li>
             </ul>
         </div>
-    </nav>
-
-    <div id="successmessage" class="container my-4">
-        @if(session()->exists('message'))
-
-        <div class="alert alert-success container my-4" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                    aria-hidden="true">&times;</span></button>
-            {{session('message')}}
-            <strong>Success!</strong> You have been signed in successfully!
-
-        </div>
-
-        @endif
     </div>
+
+
 
 
 
@@ -109,12 +97,14 @@
             </div>
         </nav>
 
+        
+
         <div class="container search">
             <div>
                 <form action="{{route('search')}}" method="post">
                     @csrf
                     <div>
-                        <select type="text" id="name" name="court">
+                        <select class="form-control" type="text" id="name" name="court">
                             @isset($court)
                             <option value="{{$court}}">{{$court}}</option>
                             <option value="">All</option>
@@ -138,7 +128,7 @@
 
 
             <div>
-                <select type="text" id="type" name="type">
+                <select class="form-control" type="text" id="type" name="type">
                     @isset($type)
                             <option value="{{$type}}">{{$type}}</option>
                             <option value="">All</option>
@@ -167,7 +157,7 @@
 
 
             <div>
-                <select type="text" id="city" name="city">
+                <select class="form-control" type="text" id="city" name="city">
                     @isset($city)
                     <option value="{{$city}}">{{$city}}</option>
                     <option value="">All</option>
@@ -219,3 +209,17 @@
 
 
     </header>
+
+    <div id="successmessage" class="container my-4">
+        @if(session()->exists('message'))
+
+        <div class="alert alert-success container my-10" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            {{session('message')}}
+            <strong>Success!</strong> You have been signed in successfully!
+
+        </div>
+
+        @endif
+    </div>

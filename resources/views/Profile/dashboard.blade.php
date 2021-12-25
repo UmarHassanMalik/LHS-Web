@@ -19,7 +19,7 @@
         </div>
         <div class="card-footer">
           <div class="stats">
-            <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            <!-- <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated -->
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
         </div>
         <div class="card-footer">
           <div class="stats">
-            <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            <!-- <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated -->
           </div>
         </div>
       </div>
@@ -55,18 +55,12 @@
         </div>
         <div class="card-footer">
           <div class="stats">
-            <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            <!-- <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated -->
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
-
-
-
 
 
 

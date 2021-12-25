@@ -5,11 +5,10 @@
     <link rel="stylesheet"  href="{{url('/css/Login.css')}}"/>
     <link rel="stylesheet"  href="{{url('/css/home.css')}}"/>
     <link rel="stylesheet"  href="{{url('/css/Create_Account.css')}}"/>
-    <link rel="stylesheet"  href="{{url('/css/app.css')}}"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" >
+    <meta name="author">
     <link
         href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
         rel="stylesheet">
@@ -17,21 +16,12 @@
         setTimeout(function(){ $("#wronglogin").hide(); }, 5000); 
         </script>
 
-     
-
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-
-
-        
 
     <title>Hire Lawyer</title>
     
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{url('/css/bootstrap.min.css')}}">
-
-    <link rel="stylesheet" type="text/css" href="{{url('/css/font-awesome.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
     <link rel="stylesheet" href="{{url('/css/index.css')}}">
 
@@ -129,11 +119,6 @@
 
 
 
-
-
-
-
-
     <div>
         <div class="modal fade" id="loginModal">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -175,7 +160,7 @@
                             </div>
                             <br><br>
                             <div id="lawyer_regis" class=" tab-pane active">
-                                <div class=" text-center text-info font-awesome"><b> Create Lawyer Account </b></div>
+                                <div class=" text-center text-info font-awesome"><b> REGISTER LAWYER </b></div>
                                 <br>
                                 <form method="POST" action="{{ route('register') }}" >
                                     @csrf
@@ -187,7 +172,7 @@
                                     <div class="form-group container " id="createAcc_Input">
                                         <div class="half">
                                             <label for="Full_Name"> {{ __('Full Name') }}</label>
-                                            <input type="text" class="form-control " id="exampleFormControlInput1"  name="name"
+                                            <input  class="form-control " id="exampleFormControlInput1"  name="name"
                                                 placeholder="Enter User Name">
                                         @error('Full_Name')
                                             <span class="invalid-feedback" role="alert">
@@ -196,22 +181,24 @@
                                         @enderror        
                                         </div>
 
-                                        <div class="half form-group">
+                                        <div class="half">
                                             <label for="Email">{{ __('Email') }} </label>
-                                            <input type="email" class="form-control " id="exampleInputPassword1"  name="email"
+                                            <input type="email" class="form-control "   name="email"
                                                 placeholder="name@example.com"> 
-                                        </div>
+                                        
 
                                     @error('Email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                        </div>
                                     </div>
                                     <br>
+                                  
                                     <div class="form-group container " id="createAcc_Input">
                                         <div class="half">
-                                            <label for="password">{{ __('password') }}</label>
+                                            <label for="password">{{ __('Password') }}</label>
                                             <input type="password" class="form-control " id="exampleFormControlInput1"  @error('password') is-invalid @enderror name="password" required autocomplete="new-password" 
                                                 placeholder="Enter Password">
 
@@ -244,7 +231,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="Address">{{ __('Address') }}</label>
-                                        <input type="text"  name="address" class="form-control " id="InputName" placeholder="Address">
+                                        <input   name="address" class="form-control " id="InputName" placeholder="Address">
 
                                     @error('Address')
                                         <span class="invalid-feedback" role="alert">
@@ -256,7 +243,7 @@
 
                           <div class="form-group">
                                         <label for="Qualification">{{ __('Qualification') }}</label>
-                                        <input type="text"  name="qualification" class="form-control " id="InputName" placeholder="Qualification">
+                                        <input  name="qualification" class="form-control " id="InputName" placeholder="Qualification">
 
                                     @error('Qualification')
                                         <span class="invalid-feedback" role="alert">
@@ -268,7 +255,7 @@
 
                                     <div class="form-group">
                                         <label for="Experience">{{ __('Experience') }}</label>
-                                        <input type="text"  name="experience" class="form-control " id="InputName" placeholder="Experience">
+                                        <input   name="experience" class="form-control " id="InputName" placeholder="Experience">
 
                                     @error('Experience')
                                         <span class="invalid-feedback" role="alert">
@@ -283,7 +270,7 @@
 
                      <div class="form-group">
                                         <label for="City">{{ __('City') }}</label>
-                                      <select type="text" id="city" name="city">
+                                      <select class="form-control"  id="city" name="city">
                     <option value="Select a City">Select a City</option>
                     <option value="Abbotabad">Abbotabad</option>
                     <option value="Arif Wala">Arif Wala</option>
@@ -414,7 +401,7 @@
                                                 <br /> 
 
 
-      <div class="boxes ">
+                                         <div class="boxes ">
 
                                           <div class="pretty p-default p-thick p-pulse">
                                                 <input type="radio" name="court_type" value="Federal Shariat Court" />
@@ -438,45 +425,27 @@
 
                                         <br /> 
                                            <div class="boxes ">
-
-                          
-                                        
-
-
                                            <div class="pretty p-default p-thick p-pulse">
                                                 <input type="radio" name="court_type" value="Nab Court" />
                                                 <div class="state p-info-o">
                                                     <label>Nab Court</label>
                                                 </div>
                                             </div>
-
-                                       
-           
                                         </div>
-
-                                        
-                        <br />          
-
-
-       <div>
+                                    <br>        
+                                    <div>
                                         <button type="CreateAcc_submit" class="btn btn-primary btn2">{{ __('Register') }}</button>
                                     </div>
-
-
-
-                                        </div>
                                     </div>
-                                    <br>
-                             
-
+                                </div>
+                                <br>
                                 </form>
 
                             <div id="client_regis" class="container tab-pane fade">
                             
-                            <div class=" text-center text-info font-awesome"><b> {{ __('Register') }} Client </b></div>
-                                <br>
-                                
-                                              
+                                <div class=" text-center text-info font-awesome"><b> REGISTER CLIENT </b></div>
+                
+                                <br>          
                              <form method="POST" action="{{ route('register') }}">
                                 
                                  @csrf
@@ -485,7 +454,7 @@
          
                                  <div class="form-group ">
                                 <label for="name">{{ __('Full Name') }}</label>
-                                <input type="text" class="form-control  @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus  id="" id="InputName"
+                                <input  class="form-control  @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus  id="" id="InputName"
                                         placeholder="Enter Full Name">
                                  @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -534,9 +503,7 @@
                         <small>
                             <p>Already Registered? Login <u><a type="already_registered" data-toggle="modal"
                                         data-target="#loginModal" data-dismiss="modal">here</a></u> </p>
-                        </small>
-                    
-                
+                        </small>        
             
                      </form>
                                                 
@@ -661,24 +628,24 @@
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <fieldset>
-                                        <input name="name" type="text" id="name" placeholder="Your Name*" required="">
+                                        <input name="name"  id="name" placeholder="Your Name*" required>
                                     </fieldset>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <fieldset>
-                                        <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*"
-                                            placeholder="Your Email*" required="">
+                                        <input name="email"  id="email" pattern="[^ @]*@[^ @]*"
+                                            placeholder="Your Email*" required>
                                     </fieldset>
                                 </div>
                                 <div class="col-md-12 col-sm-12">
                                     <fieldset>
-                                        <input name="subject" type="text" id="subject" placeholder="Subject">
+                                        <input name="subject"  id="subject" placeholder="Subject">
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-12">
                                     <fieldset>
                                         <textarea name="message" rows="6" id="message" placeholder="Message"
-                                            required=""></textarea>
+                                            required></textarea>
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-12">

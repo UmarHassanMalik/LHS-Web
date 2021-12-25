@@ -15,7 +15,7 @@
         
         <i class="fa fa-user icon"></i> &nbsp; &nbsp;
         <input placeholder="Enter Email Address" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                <br>
+        <br>
                              
       </div>
       <br>
@@ -23,17 +23,20 @@
         
         <i class="fa fa-key icon"></i>&nbsp;&nbsp;
         <input placeholder="Enter Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                            <br>
+        <br>
                             
       </div>
 
       <div class="container">
        
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
+            <div class="form-check ">
                 <label class="form-check-label" for="remember">
-                    {{ __('Remember Me') }}
+                  <div class="pretty p-default p-thick p-pulse">
+                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    <div class="state p-info-o">
+                        <label>Remember Me</label>
+                    </div>
+                </div>
                 </label>
             </div>
     
@@ -41,31 +44,20 @@
       <br><br>
       <div>
       
-      <button type="submit" class="btn btn-dark btn-block btn-round btn-style">
+      <button type="submit" class="btn btn-dark btn-block btn-round btn-style"><i class="fa fa-sign-in icon"></i>
         {{ __('Login') }}
     </button>
       @if (Route::has('forgotPassword'))
       <a class="btn btn-link" href="{{ route('forgotPassword') }}">
-          {{ __('Forgot Your Password?') }}
+         <u> {{ __('Forgot Your Password?') }}</u>
       </a>
          @endif
       </div>
     </form>
 
-    <div class="text-center text-muted delimiter">or use a social network</div>
+    <div class="text-center text-muted delimiter"></div>
     <div class="d-flex justify-content-center social-buttons">
-      <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top"
-        title="Twitter">
-        <i class="fab fa-twitter"></i>
-      </button>
-      <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top"
-        title="Facebook">
-        <i class="fab fa-facebook"></i>
-      </button>
-      <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top"
-        title="Linkedin">
-        <i class="fab fa-linkedin"></i>
-      </button>
+   
      
     </div>
   </div>

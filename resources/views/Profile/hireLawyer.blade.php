@@ -19,7 +19,7 @@
 
           @csrf 
 
-          <input type="hidden" name="budget" value="{{$app['budget']}}">
+<input type="hidden" name="budget" value="{{$app['budget']}}">
           <input type="hidden" name="case_id" value="{{ $case['title']}}">
           <input type="hidden" name="lawyer_id"  value="{{ $lawyer['user_id']}}">
 

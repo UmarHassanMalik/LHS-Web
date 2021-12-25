@@ -3,17 +3,17 @@
               <nav>
                 <ul>
                   <li>
-                    <a href="https://www.creative-tim.com">
-                      Creative Tim
+                    <a href="">
+                      Lawyer Hiring System
                     </a>
                   </li>
                   <li>
-                    <a href="http://presentation.creative-tim.com">
+                    <a href="">
                       About Us
                     </a>
                   </li>
                   <li>
-                    <a href="http://blog.creative-tim.com">
+                    <a href="">
                       Blog
                     </a>
                   </li>
@@ -23,8 +23,8 @@
                 &copy;
                 <script>
                   document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-                </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a
-                  href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+                </script>, Designed by <a href="" target="_blank">Lawyer Hiring System</a>. Coded by <a
+                  href="" target="_blank"> Umar Haider Zuhaib</a>.
               </div>
             </div>
           </footer>

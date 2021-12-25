@@ -1,9 +1,100 @@
-@include('layout')
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <div class="container" type="pakistan_laws">
-            <ul>
-                <li><strong>Acts & Ordinances</strong></li>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="{{url('/css/PakistanLaws/PakistanLaws.css')}}" />
+    <link rel="stylesheet" href="{{url('/css/home.css')}}" />
+    <style>
+        div[type="pakistan_laws"]{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        </style>
+
+
+</head>
+
+<body>
+
+    
+    <div class="col-md-12 py-0 navbar navbar-expand-sm navbar-dark cyan sticky-top" type="navmain">
+        <a class=" text-success ms-2 font-bold" href="#">Welcome</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+            aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSuapportedContent-4">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <img width="30" height="30" class="rounded-circle" src="../images/profile.jpg" alt="..."> {{Auth::user()->displayName}}</a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-cyan"
+                        aria-labelledby="navbarDropdownMenuLink-4">
+                        <a class="dropdown-item " href="{{url('/Profile/dashboard')}}"><i class="fa fa-user"></i> &nbsp; &nbsp;  My Profile</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> &nbsp; &nbsp; {{ __('Logout') }} </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
             </ul>
+        </div>
+    </div>
+
+
+   
+
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-md  navbar-dark">
+
+        <div class="container">
+
+            <a href="{{route('home')}}" class="navbar-brand font-weight-bold" type="button"> Lawyer Hiring System</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsenavbar">
+
+                <ul class="active navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="{{ url('/index') }}" class="nav-link text-white">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('/PostLegalCase') }}" class="nav-link text-white ">POST YOUR LEGAL CASE</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{{ url('/PakistanLaws') }}" class="nav-link text-white">PAKISTAN LAWS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('/Articles') }}" class="nav-link text-white ">ARTICLES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('/Feedback') }}" class="nav-link text-white">FEEDBACK</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <div class="container jumbotron" type="pakistan_laws">
+        <div  >
+            
+                <h4> Acts & Ordinances</h4>
+            
+        </div>
+        <br>
+       
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="./PDFs/ACCESS-TO-JUSTICE-DEVELOPMENT-FUND-RULES.pdf" download
                         rel="noopener noreferrer" target="_blank">
@@ -24,7 +115,7 @@
                         Agreement-On-The-Network-Of-Aquaculture-Centers-In-Asia-And-the-Pacific
                     </a></li>
                 <li class="list-group-item"><a href="./PDFs/ANTI-TERRORISM-_AMENDMENT_-ACT-1998.pdf" noopener
-                        noreferrer" target="_blank">
+                        noreferrer target="_blank">
                         ANTI-TERRORISM-_AMENDMENT_-ACT-1998
                     </a></li>
                 <li class="list-group-item"><a href="./PDFs/ANTI-TERRORISM-_AMENDMENT_-ACT-1998.pdf.pdf" download
@@ -434,9 +525,13 @@
 
             </ul>
             <br>
-            <ul>
-                <li><strong type="reg">Regulations</strong></li>
-            </ul>
+           
+            <div  >
+            
+                <h4> Rules & Regulations</h4>
+            
+            </div>
+           
             <br>
 
             <ul class=" list-group list-group-flush list_margin">
@@ -474,27 +569,9 @@
                     </a>
                 </li>
 
-
-
-
-
             </ul>
         </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
 
 
@@ -527,10 +604,10 @@
                     <div class="footer-col">
                         <h4>Follow us</h4>
                         <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-quora"></i></a>
                         </div>
                     </div>
                 </div>
@@ -540,7 +617,6 @@
 
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </html>
