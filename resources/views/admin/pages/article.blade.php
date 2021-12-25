@@ -97,6 +97,7 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @if($article > 0)
                 @foreach($article as $key => $fb)
 
 
@@ -137,6 +138,11 @@
                   </tr>
 
                 @endforeach
+                @else
+                
+                <td >NO RECORD FOUND</td>
+                
+                @endif
 
 
                   

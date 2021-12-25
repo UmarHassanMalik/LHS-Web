@@ -98,6 +98,7 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @if($feedback > 0)
                 @foreach($feedback as $key => $fb)
 
 
@@ -142,7 +143,12 @@
                   </tr>
 
                 @endforeach
-
+                
+                @else
+                
+                <td >NO RECORD FOUND</td>
+                
+               @endif
 
                   
                 
