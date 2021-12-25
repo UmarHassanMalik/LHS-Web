@@ -1,0 +1,62 @@
+
+
+  
+
+
+.modal-header .close {
+  margin-top: -1.5rem;
+}
+.text-center .container{
+  height: 45px;
+  padding: 3px;
+  margin-right: 25px ;
+  display: flex;
+  justify-content:space-around;
+}
+.form-title .container{
+  padding: 30px 50px;
+  max-width: 400px;
+  max-height: 900px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-style:inherit;
+}
+
+.text-center .container .icon{
+  padding: auto;
+  margin-top: 15px;
+}
+.fields{
+  border-radius:  0.4rem;
+}
+
+
+.form-title {
+  margin: -2rem 0rem 2rem;
+}
+
+.btn-round {
+  border-radius: 3rem;
+}
+
+.delimiter {
+  padding: 1rem;
+}
+
+.social-buttons .btn {
+  margin: 0 0.5rem 1rem;
+}
+
+.signup-section {
+  padding: 0.3rem 0rem;
+}
+
+#now{
+  height: 0px;
+  width: 0px;
+}
+a[type="not_Member"]{
+  cursor: pointer;
+}
+
