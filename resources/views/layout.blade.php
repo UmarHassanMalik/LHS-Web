@@ -21,8 +21,8 @@
 
 
 </head>
-
-<body>
+   
+<body style="background: #e8cbc0; background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4); background: linear-gradient(to right, #e8cbc0, #636fa4);">
 
     <div class="col-md-12 py-0 navbar navbar-expand-sm navbar-dark cyan navbar-collapse sticky-top" type="navmain">
         <a class=" text-success ms-2 font-bold" href="#">Welcome</a>
@@ -210,16 +210,14 @@
 
     </header>
 
-    <div id="successmessage" class="container my-4">
-        @if(session()->exists('message'))
+    
 
-        <div class="alert alert-success container my-10" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                    aria-hidden="true">&times;</span></button>
-            {{session('message')}}
-            <strong>Success!</strong> You have been signed in successfully!
+    @if ($message = Session::get('message'))
 
-        </div>
-
-        @endif
-    </div>
+    <br />
+<div id="successmessage" class="alert alert-success alert-block" >
+<button type="button" class="close" data-dismiss="alert">×</button>	
+   <strong> You have been signed in Successfully! </strong>
+</div>
+@endif
+    

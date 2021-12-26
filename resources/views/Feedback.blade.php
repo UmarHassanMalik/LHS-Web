@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body style="background: #e8cbc0; background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4); background: linear-gradient(to right, #e8cbc0, #636fa4);">
 
 
     <!-- HEADER -->
