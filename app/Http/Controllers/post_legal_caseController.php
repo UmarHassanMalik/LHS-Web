@@ -193,9 +193,9 @@ class post_legal_caseController extends Controller
         $postRef->getChild('article_id')->set($key);
 
         if ($postRef) {
-            return redirect()->back()->with('status', 'Article added successfully');
+            return redirect()->back()->with('status', 'Article Posted Successfully');
         } else {
-            return redirect()->back()->with('status', 'Article not added');
+            return redirect()->back()->with('status', 'Failed to Post the Article , Try Again');
         }
 
     }

@@ -7,9 +7,10 @@
 
     <!-- ********************** STEPS TO FIND A LAWYER/TAX CONSULTANT *********************** -->
 
-    <div class="container" type=slider_container>
+    
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div style="max-width:100%;max-height:10%;" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+           
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"> </li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>

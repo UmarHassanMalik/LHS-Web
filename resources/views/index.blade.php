@@ -91,6 +91,35 @@
                 </div>
               @endif  
 
+
+
+
+
+              @if ($message = Session::get('success'))
+
+              <br />
+    <div id="" class="alert alert-success alert-block" >
+         <button type="button" class="close" data-dismiss="alert">×</button>	
+             <strong> Registration Successfull!!  </strong><i>Please  <a style="cursor: pointer"  data-toggle="modal" data-target="#loginModal" data-dismiss="modal"><b><u style="color: brown">Login</u></b> </a> to Continue </i>
+    </div>
+    @endif
+
+
+    @if ($message = Session::get('failed'))
+
+    <br />
+<div class="alert alert-danger alert-block" >
+<button type="button" class="close" data-dismiss="alert">×</button>	
+   <strong>{{ $message }}</strong><i>Please<a href="myModal"> Try Again </a> </i>
+</div>
+@endif
+
+
+
+
+
+             
+
                 <h6>Get Legal advice</h6>
                 <h2>Hire Legal <em>Expert</em></h2>
                 <div class="main-button scroll-to-section">

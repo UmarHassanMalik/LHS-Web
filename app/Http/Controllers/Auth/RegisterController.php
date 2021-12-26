@@ -123,6 +123,12 @@ class RegisterController extends Controller
 
         $postRef = $this->database->getReference('users/'.$createdUser->uid)->set($postData);
 
+        if ($postRef) {
+         return redirect()->back()->with('success', 'Registration Successfull  ');
+     } else {
+         return redirect()->back()->with('failed', 'Registration Failed ');
+     }
+
 
 
          // $postKey = $postRef->setKey($createdUser->uid);
