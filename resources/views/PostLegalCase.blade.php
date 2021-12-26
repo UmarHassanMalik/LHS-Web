@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="{{url('/css/PostLegalCase/PostLegalCase.css')}}" />
     <link rel="stylesheet" href="{{url('/css/home.css')}}" />
     
-
+    <script>
+        setTimeout(function (".alert") { $("#successmessage").hide(); }, 5000);
+    </script>
 
 </head>
 
@@ -288,7 +290,8 @@
         var budget = values[3].value;
         var statement = values[4].value;
         var courttype = values[5].value;
-        var email = values[7].value;
+        var email = values[6].value;
+        var lawyer_type = values[7].value;
 
         var user_id = $(".authUserId").val();
 
@@ -302,6 +305,7 @@
             isopen: 'true',
             hiredlawyer: "false",
             email: email,
+            lawyer_type:lawyer_type,
             courttype: courttype,
             city: city,
             budget: budget,
