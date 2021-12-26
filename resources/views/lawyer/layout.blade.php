@@ -22,6 +22,9 @@
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
 
+    <link href="/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
+    <link href="/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+
 </head>
 
 <body class="">
@@ -119,8 +122,8 @@
                                   </p>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                  <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                  <a class="dropdown-item " href="{{ route('logout') }}" onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();"><i class="ni ni-user-run"></i>{{ __('Logout') }}</a>
                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                   </form>

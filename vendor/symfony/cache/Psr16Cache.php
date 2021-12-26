@@ -30,8 +30,8 @@ class Psr16Cache implements CacheInterface, PruneableInterface, ResettableInterf
 
     private const METADATA_EXPIRY_OFFSET = 1527506807;
 
-    private \Closure $createCacheItem;
-    private $cacheItemPrototype = null;
+    private $createCacheItem;
+    private $cacheItemPrototype;
 
     public function __construct(CacheItemPoolInterface $pool)
     {
@@ -71,8 +71,10 @@ class Psr16Cache implements CacheInterface, PruneableInterface, ResettableInterf
 
     /**
      * {@inheritdoc}
+     *
+     * @return mixed
      */
-    public function get($key, $default = null): mixed
+    public function get($key, $default = null)
     {
         try {
             $item = $this->pool->getItem($key);
@@ -91,8 +93,10 @@ class Psr16Cache implements CacheInterface, PruneableInterface, ResettableInterf
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
-    public function set($key, $value, $ttl = null): bool
+    public function set($key, $value, $ttl = null)
     {
         try {
             if (null !== $f = $this->createCacheItem) {
@@ -114,8 +118,10 @@ class Psr16Cache implements CacheInterface, PruneableInterface, ResettableInterf
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
-    public function delete($key): bool
+    public function delete($key)
     {
         try {
             return $this->pool->deleteItem($key);
@@ -128,16 +134,20 @@ class Psr16Cache implements CacheInterface, PruneableInterface, ResettableInterf
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
-    public function clear(): bool
+    public function clear()
     {
         return $this->pool->clear();
     }
 
     /**
      * {@inheritdoc}
+     *
+     * @return iterable
      */
-    public function getMultiple($keys, $default = null): iterable
+    public function getMultiple($keys, $default = null)
     {
         if ($keys instanceof \Traversable) {
             $keys = iterator_to_array($keys, false);
@@ -184,8 +194,10 @@ class Psr16Cache implements CacheInterface, PruneableInterface, ResettableInterf
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
-    public function setMultiple($values, $ttl = null): bool
+    public function setMultiple($values, $ttl = null)
     {
         $valuesIsArray = \is_array($values);
         if (!$valuesIsArray && !$values instanceof \Traversable) {
@@ -235,8 +247,10 @@ class Psr16Cache implements CacheInterface, PruneableInterface, ResettableInterf
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
-    public function deleteMultiple($keys): bool
+    public function deleteMultiple($keys)
     {
         if ($keys instanceof \Traversable) {
             $keys = iterator_to_array($keys, false);
@@ -255,8 +269,10 @@ class Psr16Cache implements CacheInterface, PruneableInterface, ResettableInterf
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
-    public function has($key): bool
+    public function has($key)
     {
         try {
             return $this->pool->hasItem($key);

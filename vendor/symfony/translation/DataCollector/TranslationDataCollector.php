@@ -65,7 +65,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
     /**
      * @return array|Data
      */
-    public function getMessages(): array|Data
+    public function getMessages()
     {
         return $this->data['messages'] ?? [];
     }

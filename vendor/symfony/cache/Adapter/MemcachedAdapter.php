@@ -91,9 +91,11 @@ class MemcachedAdapter extends AbstractAdapter
      * @param array[]|string|string[] $servers An array of servers, a DSN, or an array of DSNs
      * @param array                   $options An array of options
      *
+     * @return \Memcached
+     *
      * @throws \ErrorException When invalid options or servers are provided
      */
-    public static function createConnection(array|string $servers, array $options = []): \Memcached
+    public static function createConnection($servers, array $options = [])
     {
         if (\is_string($servers)) {
             $servers = [$servers];
@@ -241,7 +243,7 @@ class MemcachedAdapter extends AbstractAdapter
     /**
      * {@inheritdoc}
      */
-    protected function doSave(array $values, int $lifetime): array|bool
+    protected function doSave(array $values, int $lifetime)
     {
         if (!$values = $this->marshaller->marshall($values, $failed)) {
             return $failed;
@@ -262,7 +264,7 @@ class MemcachedAdapter extends AbstractAdapter
     /**
      * {@inheritdoc}
      */
-    protected function doFetch(array $ids): iterable
+    protected function doFetch(array $ids)
     {
         try {
             $encodedIds = array_map('self::encodeKey', $ids);
@@ -283,7 +285,7 @@ class MemcachedAdapter extends AbstractAdapter
     /**
      * {@inheritdoc}
      */
-    protected function doHave(string $id): bool
+    protected function doHave(string $id)
     {
         return false !== $this->getClient()->get(self::encodeKey($id)) || $this->checkResultCode(\Memcached::RES_SUCCESS === $this->client->getResultCode());
     }
@@ -291,7 +293,7 @@ class MemcachedAdapter extends AbstractAdapter
     /**
      * {@inheritdoc}
      */
-    protected function doDelete(array $ids): bool
+    protected function doDelete(array $ids)
     {
         $ok = true;
         $encodedIds = array_map('self::encodeKey', $ids);
@@ -307,12 +309,12 @@ class MemcachedAdapter extends AbstractAdapter
     /**
      * {@inheritdoc}
      */
-    protected function doClear(string $namespace): bool
+    protected function doClear(string $namespace)
     {
         return '' === $namespace && $this->getClient()->flush();
     }
 
-    private function checkResultCode(mixed $result)
+    private function checkResultCode($result)
     {
         $code = $this->client->getResultCode();
 
@@ -325,7 +327,7 @@ class MemcachedAdapter extends AbstractAdapter
 
     private function getClient(): \Memcached
     {
-        if (isset($this->client)) {
+        if ($this->client) {
             return $this->client;
         }
 
