@@ -24,7 +24,7 @@
 
 <body>
 
-    <div class="col-md-12 py-0 navbar navbar-expand-sm navbar-dark cyan sticky-top" type="navmain">
+    <div class="col-md-12 py-0 navbar navbar-expand-sm navbar-dark cyan navbar-collapse sticky-top" type="navmain">
         <a class=" text-success ms-2 font-bold" href="#">Welcome</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
             aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,7 @@
 
             <div class="container">
 
-                <a href="{{route('home')}}" class="navbar-brand font-weight-bold" type="button"> Lawyer Hiring
+                <a href="{{route('home')}}" class="navbar-brand font-weight-bold" type="button"><img height="40" src="../images/brand.jfif"> Lawyer Hiring
                     System</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
@@ -72,7 +72,7 @@
                 <div class="collapse navbar-collapse" id="collapsenavbar">
 
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item active" >
                             <a href="{{ url('/index') }}" class="nav-link text-white">HOME</a>
                         </li>
                         <li class="nav-item">
