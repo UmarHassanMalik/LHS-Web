@@ -1,60 +1,96 @@
 @include('layout')
 
+<style>
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.social-link:hover, .social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+}
+
+</style>
 
 
 
 
 
-    <!-- ********************** STEPS TO FIND A LAWYER/TAX CONSULTANT *********************** -->
-
-    <div class="container" type=slider_container>
-
-        <div class="row mb-5 mt-5">
-            <div class="col-12">
-                    <h1 class="text-center">Lawyers</h1>
-            </div>
-            <div class="row mt-3 mb-3 justify-content-center">
-            
-                @if(count($lawyers) > 0)
-                @foreach($lawyers as $lawyer)
-                <div class="col-3 card mt-3  mx-3" style="width:900px;">
-                    <div class="card-body">
-                      <h5 class="card-title">{{$lawyer['name']}} </h5>
-                      <p class="card-text">{{$lawyer['email']}}</p>
-                      <h6 class="card-subtitle mb-2 text-muted pt-3">{{$lawyer['lawyerType']}}</h6>
-                      <h6 class="card-subtitle mb-2 text-muted pt-2">{{$lawyer['city']}}</h6>
-
-
-                      @if(!empty($lawyer['experience']))
-
-                      <h6 class="card-subtitle mb-2 text-muted pt-2">Experience: {{$lawyer['experience']}}</h6>
-                      @endif
-
-                      @if(!empty($lawyer['qualification']))
-                      <h6 class="card-subtitle mb-2 text-muted pt-2">Qualification: {{$lawyer['qualification']}}</h6>
-                      @endif
 
 
 
-                      <!-- <a href="#" class="card-link">Card link</a>
-                      <a href="#" class="card-link">Another link</a> -->
+                  <div class="container py-4">
+                    <div style="color: cornsilk" class="row text-center">
+                        <div class="col-lg-8 mx-auto">
+                            <h1 class="display-4">Lawyer's Profile</h1>
+                            <p class="lead mb-0">Searched Lawyers</p>
+                            <p class="lead"><a href="" class="text"></a>
+                            
+                            </p>
+                        </div>
                     </div>
-                  </div>
+                </div><!-- End -->
+                
+                
+                <div class="container">
+                    <div class="row text-center">
+                        @if(count($lawyers) > 0)
+                        @foreach($lawyers as $lawyer)
+                  
+                        <div class="col-xl-3 col-sm-6 mb-5">
+                            <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../images/profile.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                <h5 class="mb-0">{{$lawyer['name']}}</h5><span class="small text-uppercase text-muted">Ratings</span>
+                                <p class="card-text">Email: {{$lawyer['email']}}</p>
+                                <h6 class="card-subtitle mb-2 text-muted pt-3"><u>{{$lawyer['lawyerType']}}</u></h6>
+                                <h6 class="card-subtitle mb-2 text-muted pt-2"><b>Location :</b> {{$lawyer['city']}} <i class="flag flag-Pakistan"></i></h6>
+
+                                
+                                @if(!empty($lawyer['experience']))
+
+                                <h6 class="card-subtitle mb-2 text-muted pt-2"><b>Experience:</b> {{$lawyer['experience']}}</h6>
+                                @endif
+          
+                                @if(!empty($lawyer['qualification']))
+                                <h6 class="card-subtitle mb-2 text-muted pt-2"><b>Qualification:</b> {{$lawyer['qualification']}}</h6>
+                                @endif
+                     
+                                <ul class="social mb-0 list-inline mt-3">
+                                    <li class="list-inline-item"><a href="#" class="shadow social-link"><i class="fa fa-facebook-f"></i></a></li>
+                                    <li class="list-inline-item"><a href="#" class="shadow  social-link"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="list-inline-item"><a href="#" class="shadow  social-link"><i class="fa fa-instagram"></i></a></li>
+                                    <li class="list-inline-item"><a href="#" class="shadow social-link"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div><!-- End -->
+                    </div>
+                </div>
                   
                  
                   
                   @endforeach
                   @else
-<div class="row">
-                  <div class="col-12">
-                    <h6 class="text-center">No Lawyers Found !!!</h6>
+            <div class="container py-5">
+                <div class="row text-center ">
+                    <div class="col-lg-8 mx-auto">
+                    <p class="lead mb-0">No Lawyers Found</p>
+                    </div>
+                </div>
             </div>
-        </div>
                   @endif
                  
             
             </div>
-            
+            <br>
             
             </div>
     </div>
