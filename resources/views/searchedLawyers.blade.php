@@ -46,11 +46,11 @@
                     <div class="row text-center">
                         @if(count($lawyers) > 0)
                         @foreach($lawyers as $lawyer)
-                  
+                        
                         <div class="col-xl-3 col-sm-6 mb-5">
-                            <button type="button" class="btn btn-primary">HIRE ME</button>
+  
                             <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../images/profile.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                                <h5 class="mb-0">{{$lawyer['name']}}</h5><span class="small text-uppercase text-muted">Ratings</span>
+                                <h5 class="mb-0">{{$lawyer['name']}}</h5><span class="small text-uppercase text-muted"></span>
                                 <p class="card-text">Email: {{$lawyer['email']}}</p>
                                 <h6 class="card-subtitle mb-2 text-muted pt-3"><u>{{$lawyer['lawyerType']}}</u></h6>
                                 <h6 class="card-subtitle mb-2 text-muted pt-2"><b>Location :</b> {{$lawyer['city']}} <i class="flag flag-Pakistan"></i></h6>
